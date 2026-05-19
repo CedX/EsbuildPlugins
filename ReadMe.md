@@ -2,8 +2,8 @@
 A small collection of [ESBuild](https://esbuild.github.io) plug-ins.
 
 ## Documentation
-- [User guide](https://github.com/CedX/EsbuildPlugins/tree/main/docs)
-- [Examples](https://github.com/CedX/EsbuildPlugins/tree/main/example)
+- [User guide](https://github.com/CedX/EsbuildPlugins/tree/main/Documentation)
+- [Examples](https://github.com/CedX/EsbuildPlugins/tree/main/Examples)
 
 ## Development
 - [Git repository](https://github.com/CedX/EsbuildPlugins)

@@ -1,8 +1,8 @@
-import {minifyHtmlLiterals} from "@cedx/EsbuildPlugins";
+import {dedupeModules} from "@cedx/esbuild-plugins";
 import esbuild from "esbuild";
 
 const buildOptions = { /* Your configuration. */ };
 await esbuild.build({
 	...buildOptions,
-	plugins: [minifyHtmlLiterals()]
+	plugins: [dedupeModules(["bootstrap", "lit"])]
 });

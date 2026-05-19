@@ -1,4 +1,4 @@
-import {minifyHtmlLiterals} from "@cedx/EsbuildPlugins";
+import {minifyHtmlLiterals} from "@cedx/esbuild-plugins";
 import esbuild from "esbuild";
 import {equal} from "node:assert/strict";
 import {Buffer} from "node:buffer";
@@ -12,7 +12,7 @@ describe("minifyHtmlLiterals", () => {
 	it("should minify `html` template literals from a template", async () => {
 		const bundle = await esbuild.build({
 			bundle: true,
-			entryPoints: [join(import.meta.dirname, "../res/HtmlTemplate.js")],
+			entryPoints: [join(import.meta.dirname, "../Resources/HtmlTemplate.js")],
 			external: ["lit"],
 			format: "esm",
 			plugins: [minifyHtmlLiterals()],
@@ -22,7 +22,7 @@ describe("minifyHtmlLiterals", () => {
 		const [{contents}] = bundle.outputFiles;
 		const actual = Buffer.from(contents).toString();
 		const expected = `
-			// res/HtmlTemplate.js
+			// Resources/HtmlTemplate.js
 			import { html } from "lit";
 			var htmlTemplate = html\`<p>Bonjour le monde !</p><input type="text"> <button type="button">Bouton</button>\`;
 			export {
