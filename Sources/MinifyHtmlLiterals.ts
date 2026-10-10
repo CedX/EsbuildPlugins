@@ -14,12 +14,12 @@ export function minifyHtmlLiterals(options: MinifyHtmlLiteralsOptions = {}): Plu
 		name: "MinifyHtmlLiterals",
 		setup: (build) => {
 			const {filter = /\.[jt]s$/i, ...minifyOptions} = options;
-			const tsExtensions = new Set([".cts", ".mts", ".ts", ".tsx"]);
+			const tsExtensions = [".cts", ".mts", ".ts", ".tsx"];
 			build.onLoad({namespace: "file", filter}, async args => {
 				const contents = await readFile(args.path, "utf8");
 				const {code, map} = minifyHTMLLiterals(contents, minifyOptions) ?? {code: contents, map: null};
 				return {
-					loader: tsExtensions.has(extname(args.path).toLowerCase()) ? "ts" : "js",
+					loader: tsExtensions.includes(extname(args.path).toLowerCase()) ? "ts" : "js",
 					contents: map ? `${code}${EOL}//# sourceMappingURL=${map.toUrl()}` : code
 				};
 			});
