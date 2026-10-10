@@ -1,5 +1,4 @@
 import {minifyHtmlLiterals} from "@cedx/esbuild-plugins";
-import "chai/register-should.js";
 import esbuild from "esbuild";
 import {Buffer} from "node:buffer";
 import {join} from "node:path";
