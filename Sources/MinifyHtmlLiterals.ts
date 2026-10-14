@@ -12,7 +12,7 @@ import {extname} from "node:path";
 export function minifyHtmlLiterals(options: MinifyHtmlLiteralsOptions = {}): Plugin {
 	return {
 		name: "MinifyHtmlLiterals",
-		setup: (build) => {
+		setup: build => {
 			const {filter = /\.[jt]s$/i, ...minifyOptions} = options;
 			const tsExtensions = [".cts", ".mts", ".ts", ".tsx"];
 			build.onLoad({namespace: "file", filter}, async args => {

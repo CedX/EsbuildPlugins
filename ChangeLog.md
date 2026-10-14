@@ -1,5 +1,9 @@
 # Changelog
 
+## Version [2026.10.0](https://github.com/CedX/EsbuildPlugins/compare/v1.1.0...v2026.10.0)
+- Breaking change: raised the required [Node.js](https://nodejs.org) version.
+- Switched to a year-based versioning.
+
 ## Version [1.1.0](https://github.com/CedX/EsbuildPlugins/compare/v1.0.0...v1.1.0)
 - Ported the source code to [TypeScript](https://www.typescriptlang.org).
 

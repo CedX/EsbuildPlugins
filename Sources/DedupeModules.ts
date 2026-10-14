@@ -11,7 +11,7 @@ import {packageDirectory} from "pkg-dir";
 export function dedupeModules(modules: string[], options: DedupeModulesOptions = {}): Plugin {
 	return {
 		name: "DedupeModules",
-		setup: (build) => {
+		setup: build => {
 			let {resolveDir = null} = options;
 			build.onStart(async () => { resolveDir ??= await packageDirectory() ?? process.cwd(); }); // eslint-disable-line require-atomic-updates
 			const resolveOptions = {namespace: "file", filter: new RegExp(`^(${modules.join("|")})(/|$)`)};
